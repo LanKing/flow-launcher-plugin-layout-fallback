@@ -1,8 +1,7 @@
 > When I installed Flow Launcher, I was genuinely surprised that I could not find a plugin like this. It made me wonder how much human time has been wasted retyping, deleting, and correcting text entered in the wrong keyboard layout.
+![Plugin function demo](/doc/demo.png)
 
 **Adds lower-priority fallback results by converting the query between keyboard layouts available on the user's Windows system.**
-
-![Plugin function demo](/doc/demo.png)
 
 Samples:
 * `Yfcnhjqrb` -> additionally searches `Настройки`
