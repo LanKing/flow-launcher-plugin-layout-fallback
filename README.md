@@ -2,7 +2,7 @@
 
 Plugin adds lower-priority fallback results by converting the query between keyboard layouts available on the user's Windows system.
 
-[Plugin function demo](/doc/demo.png)
+[!Plugin function demo](/doc/demo.png)
 
 Example:
 
