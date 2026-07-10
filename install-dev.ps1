@@ -3,11 +3,16 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+
 $ProjectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$ArtifactsDirectory = Join-Path $ProjectRoot "artifacts\LayoutFallback-0.1.4"
-$TargetDirectory = Join-Path $FlowPluginsDirectory "LayoutFallback-0.1.4"
+$ArtifactsDirectory = Join-Path $ProjectRoot "artifacts\LayoutFallback"
+$TargetDirectory = Join-Path $FlowPluginsDirectory "LayoutFallback"
 
 & (Join-Path $ProjectRoot "build.ps1")
+
+if (-not (Test-Path $ArtifactsDirectory)) {
+    throw "Build output was not found: $ArtifactsDirectory"
+}
 
 Remove-Item $TargetDirectory -Recurse -Force -ErrorAction SilentlyContinue
 New-Item $TargetDirectory -ItemType Directory -Force | Out-Null

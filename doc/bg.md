@@ -69,7 +69,7 @@ Set-ExecutionPolicy -Scope Process Bypass
 Инсталационният ZIP ще бъде създаден тук:
 
 ```text
-artifacts\LayoutFallback-0.1.4.zip
+artifactsayoutfallback.zip
 ```
 
 Инсталирайте генерирания ZIP от настройките за плъгини на Flow Launcher, след което рестартирайте Flow Launcher.

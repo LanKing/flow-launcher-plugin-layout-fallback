@@ -69,7 +69,7 @@ Set-ExecutionPolicy -Scope Process Bypass
 Орнотула турган ZIP бул жерде түзүлөт:
 
 ```text
-artifacts\LayoutFallback-0.1.4.zip
+artifactsayoutfallback.zip
 ```
 
 Түзүлгөн ZIP файлын Flow Launcher плагин жөндөөлөрү аркылуу орнотуңуз, андан кийин Flow Launcher-ди кайра иштетиңиз.
