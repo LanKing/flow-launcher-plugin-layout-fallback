@@ -1,0 +1,80 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "9.0.x"
+
+      - name: Read plugin version
+        id: plugin
+        shell: pwsh
+        run: |
+          $plugin = Get-Content "plugin.json" -Raw | ConvertFrom-Json
+          $version = $plugin.Version
+
+          if ([string]::IsNullOrWhiteSpace($version)) {
+            throw "plugin.json does not contain Version."
+          }
+
+          $tag = "v$version"
+
+          "version=$version" >> $env:GITHUB_OUTPUT
+          "tag=$tag" >> $env:GITHUB_OUTPUT
+
+          Write-Host "Plugin version: $version"
+          Write-Host "Expected tag: $tag"
+
+      - name: Validate tag version
+        if: github.event_name == 'push'
+        shell: pwsh
+        run: |
+          $actualTag = "${{ github.ref_name }}"
+          $expectedTag = "${{ steps.plugin.outputs.tag }}"
+
+          if ($actualTag -ne $expectedTag) {
+            throw "Git tag '$actualTag' does not match plugin.json version '$expectedTag'."
+          }
+
+      - name: Build
+        shell: pwsh
+        run: |
+          Set-ExecutionPolicy -Scope Process Bypass
+          ./build.ps1
+
+      - name: Check release ZIP
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "artifacts/LayoutFallback.zip")) {
+            throw "Release ZIP was not found: artifacts/LayoutFallback.zip"
+          }
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LayoutFallback
+          path: artifacts/LayoutFallback.zip
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.plugin.outputs.tag }}
+          name: Layout Fallback ${{ steps.plugin.outputs.tag }}
+          files: artifacts/LayoutFallback.zip
+          generate_release_notes: true
