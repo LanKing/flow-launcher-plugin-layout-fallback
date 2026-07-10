@@ -1,0 +1,13 @@
+{
+  "ID": "D1A7E9C48B6F4A5A8F963DA278F41921",
+  "ActionKeyword": "*",
+  "Name": "Layout Fallback",
+  "Description": "Adds lower-priority search results using corrected keyboard layouts available on the user's system, e.g. Yfcnhjqrb -> Настройки.",
+  "Author": "Roman Lankin AKA LanKing",
+  "Website": "https://github.com/LanKing/flow-launcher-plugin-layout-fallback",
+  "Version": "0.1.4",
+  "Language": "csharp",
+  "ExecuteFileName": "Flow.Launcher.Plugin.LayoutFallback.dll",
+  "IcoPath": "Images\\layout-fallback.png",
+  "MinimumAppVersion": "1.19.0"
+}

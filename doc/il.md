@@ -1,0 +1,97 @@
+🇺🇦 [Українська](ua.md) | 🇷🇺 [Русский](ru.md) | 🇧🇾 [Беларуская](by.md) | 🇧🇬 [Български](bg.md) | 🇷🇸 [Српски](rs.md) | 🇲🇰 [Македонски](mk.md) | 🇰🇿 [Қазақша](kz.md) | 🇰🇬 [Кыргызча](kg.md) | 🇲🇳 [Монгол](mn.md) | 🇬🇷 [Ελληνικά](gr.md) | 🇸🇦 [العربية](sa.md) | 🇮🇷 [فارسی](ir.md) | 🇦🇲 [Հայերեն](am.md) | 🇬🇪 [ქართული](ge.md) | 🇹🇭 [ไทย](th.md)
+
+[![Flow Launcher](https://img.shields.io/badge/Flow%20Launcher-plugin-5c2d91?logo=windows&logoColor=white)](https://www.flowlauncher.com/)
+[![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+[![.NET 9](https://img.shields.io/badge/.NET-9.0-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+[![Latest release](https://img.shields.io/github/v/release/LanKing/flow-launcher-plugin-layout-fallback?label=release)](https://github.com/LanKing/flow-launcher-plugin-layout-fallback/releases)
+[![Downloads](https://img.shields.io/github/downloads/LanKing/flow-launcher-plugin-layout-fallback/total?label=downloads)](https://github.com/LanKing/flow-launcher-plugin-layout-fallback/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE)
+
+> כשהתקנתי את Flow Launcher, באמת הופתעתי שלא מצאתי תוסף כזה. זה גרם לי לחשוב כמה זמן אנושי בוזבז על הקלדה מחדש, מחיקה ותיקון של טקסט שהוזן בפריסת מקלדת שגויה.
+
+# ⌨️ מוסיף תוצאות fallback עבור פריסות מקלדת שגויות.
+
+![⌨️](/doc/demo.png)
+
+דוגמאות:
+* `vdsru,` -> מחפש גם `הגדרות`
+* `יקךךם` -> מחפש גם `hello`
+
+התוסף בודק רק את פריסות המקלדת המותקנות במערכת Windows של המשתמש.
+
+התוצאות המקוריות של Flow Launcher נשארות ללא שינוי ונשארות גבוה יותר. תוצאות fallback מסומנות ב־`⌨` ומקבלות הורדת score חזקה.
+
+<a id="how-it-works"></a>
+## 🤓 המכניקה בפירוט
+
+1. קורא את פריסות המקלדת של Windows שמותקנות בעזרת `GetKeyboardLayoutList`, `HKCU\Keyboard Layout\Preload` ו- `HKCU\Keyboard Layout\Substitutes`.
+2. בונה מפות המרה בין כל זוג מסודר של פריסות זמינות.
+3. יוצר מועמדי שאילתה מתוקנים ומסנן המרות חלשות או כפולות.
+4. שואל את שאר התוספים הגלובליים של Flow Launcher עם המועמדים המתוקנים.
+5. מוסיף תוצאות fallback בעדיפות נמוכה בלי לגעת בתוצאות המקוריות של Flow Launcher.
+
+שאילתות מפורשות עם action keyword מתעלמות, ולכן התוסף משתתף רק בחיפוש גלובלי רגיל.
+
+<a id="notes"></a>
+### 📓 הערות
+
+* פלט fallback מוגבל ל-20 תוצאות ול-6 תוצאות לכל תוסף מקור.
+* חלק מתוספי צד שלישי עשויים להתנהג אחרת בשאילתות עקיפות, ולכן תוצאות fallback יכולות להשתנות לפי מקור.
+* Layout Fallback אינו מתרגם ואינו מתעתק טקסט. הוא רק מפרש מחדש את אותן לחיצות מקש פיזיות דרך פריסות Windows מותקנות אחרות.
+
+<a id="supported-keyboard-layouts"></a>
+## 🌍 פריסות מקלדת נתמכות
+
+Layout Fallback עובד הכי טוב עם פריסות מקלדת ישירות, שבהן אותם מקשים פיזיים מפיקים תווים שונים.
+
+המועמדים הטובים ביותר הם 🇺🇸 English US, 🇬🇧 English UK, 🇷🇺 Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai, 🇵🇱 Polish 214, 🇵🇱 Polish Typewriter.
+
+פריסות מבוססות לטינית יכולות גם לעבוד, אך התועלת בדרך כלל קטנה יותר כי תווים רבים חופפים לאנגלית. זה כולל: 🇩🇪 German, 🇫🇷 French AZERTY, 🇪🇸 Spanish, 🇮🇹 Italian, 🇵🇹 Portuguese, 🇹🇷 Turkish Q, 🇨🇿 Czech QWERTY, 🇸🇰 Slovak QWERTY, 🇭🇺 Hungarian, 🇷🇴 Romanian, 🇱🇹 Lithuanian, 🇱🇻 Latvian, 🇪🇪 Estonian, 🇭🇷 Croatian, 🇸🇮 Slovenian, 🇦🇱 Albanian, 🇧🇦 Bosnian Latin, 🇷🇸 Serbian Latin, 🇳🇱 Dutch, 🇩🇰 Danish, 🇳🇴 Norwegian, 🇸🇪 Swedish, 🇫🇮 Finnish, 🇮🇸 Icelandic.
+
+לחלק מהפריסות יכולה להיות תמיכה מוגבלת כי הן מסתמכות על IME, מקשים מתים, קומפוזיציה מורכבת, שימוש כבד ב־AltGr או בחירת מועמדים. זה כולל: 🇨🇳 Chinese Simplified IME, 🇹🇼 Chinese Traditional IME, 🇯🇵 Japanese IME, 🇰🇷 Korean IME, 🇻🇳 Vietnamese Telex, 🇻🇳 Vietnamese VNI, 🇮🇳 Hindi Devanagari input, 🇧🇩 Bengali input, 🇮🇳 Tamil input, 🇮🇳 Telugu input, 🇮🇳 Kannada input, 🇮🇳 Malayalam input, 🇹🇭 Thai Kedmanee variants with complex composition, 🇺🇸 US International, 🇬🇧 United Kingdom Extended, 🇨🇦 Canadian Multilingual Standard, 🇨🇦 French Canadian, 🇪🇸 Spanish International, 🇵🇹 Portuguese ABNT, 🇧🇷 Portuguese ABNT2, 🇨🇿 Czech Programmers, 🇸🇰 Slovak Programmers, 🇭🇺 Hungarian 101-key, 🇵🇱 Polish Programmer.
+
+<a id="build"></a>
+## 🛠 בנייה
+
+נדרש .NET 9 SDK:
+
+```powershell
+winget install Microsoft.DotNet.SDK.9
+```
+
+בנה את התוסף:
+
+```powershell
+Set-ExecutionPolicy -Scope Process Bypass
+.\build.ps1
+```
+
+קובץ ה-ZIP להתקנה ייווצר כאן:
+
+```text
+artifacts\LayoutFallback-0.1.4.zip
+```
+
+התקן את קובץ ה-ZIP שנוצר דרך הגדרות התוספים של Flow Launcher, ואז הפעל מחדש את Flow Launcher.
+
+### פיתוח מקומי מהיר
+
+אפשר להשתמש בסקריפט שבונה את התוסף ומעתיק את ה-build אל Flow Launcher, כך שאין צורך לעשות זאת ידנית.
+
+לתיקיית התוספים הרגילה של Flow Launcher:
+
+```powershell
+.\install-dev.ps1
+```
+
+עבור Flow Launcher portable או תיקיית תוספים מותאמת:
+
+```powershell
+.\install-dev.ps1 -FlowPluginsDirectory "D:\Apps\FlowLauncher\UserData\Plugins"
+```
+
+לאחר ההתקנה צריך להפעיל מחדש את Flow Launcher.
+
+## 📄 רישיון
+
+MIT — תרומות יתקבלו בברכה.

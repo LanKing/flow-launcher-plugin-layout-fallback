@@ -1,0 +1,97 @@
+🇺🇦 [Українська](ua.md) | 🇷🇺 [Русский](ru.md) | 🇧🇾 [Беларуская](by.md) | 🇧🇬 [Български](bg.md) | 🇷🇸 [Српски](rs.md) | 🇲🇰 [Македонски](mk.md) | 🇰🇿 [Қазақша](kz.md) | 🇰🇬 [Кыргызча](kg.md) | 🇬🇷 [Ελληνικά](gr.md) | 🇮🇱 [עברית](il.md) | 🇸🇦 [العربية](sa.md) | 🇮🇷 [فارسی](ir.md) | 🇦🇲 [Հայերեն](am.md) | 🇬🇪 [ქართული](ge.md) | 🇹🇭 [ไทย](th.md)
+
+[![Flow Launcher](https://img.shields.io/badge/Flow%20Launcher-plugin-5c2d91?logo=windows&logoColor=white)](https://www.flowlauncher.com/)
+[![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+[![.NET 9](https://img.shields.io/badge/.NET-9.0-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+[![Latest release](https://img.shields.io/github/v/release/LanKing/flow-launcher-plugin-layout-fallback?label=release)](https://github.com/LanKing/flow-launcher-plugin-layout-fallback/releases)
+[![Downloads](https://img.shields.io/github/downloads/LanKing/flow-launcher-plugin-layout-fallback/total?label=downloads)](https://github.com/LanKing/flow-launcher-plugin-layout-fallback/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE)
+
+> Flow Launcher суулгахад ийм plugin олдохгүй байгаад үнэхээр гайхсан. Буруу keyboard layout дээр бичсэн текстийг дахин бичих, устгах, засахад хүний хэчнээн цаг зарцуулагдсан бол гэж бодогдсон.
+
+# ⌨️ Буруу keyboard layout-д зориулсан fallback results нэмдэг.
+
+![⌨️](/doc/demo.png)
+
+Жишээ:
+* `Mkhnjukk` -> нэмж хайна `Тохиргоо`
+* `руддщ` -> нэмж хайна `hello`
+
+Plugin нь хэрэглэгчийн Windows системд суулгасан keyboard layout-уудыг л шалгана.
+
+Flow Launcher-ийн эх үр дүн өөрчлөгдөхгүй, дээгүүр хэвээр үлдэнэ. Fallback үр дүн `⌨` тэмдэгтэй бөгөөд score нь хүчтэй буурна.
+
+<a id="how-it-works"></a>
+## 🤓 Механик дэлгэрэнгүй
+
+1. Windows дээр суусан гарын байрлалуудыг `GetKeyboardLayoutList`, `HKCU\Keyboard Layout\Preload` болон `HKCU\Keyboard Layout\Substitutes` ашиглан уншина.
+2. Боломжтой гарын байрлалуудын эрэмбэлэгдсэн хос бүрийн хооронд хөрвүүлэх зураглал үүсгэнэ.
+3. Зассан хайлтын хувилбаруудыг үүсгэж, сул эсвэл давхардсан хувиргалтыг хасна.
+4. Зассан хувилбаруудаар Flow Launcher-ийн бусад глобал plugin-үүдээс асууна.
+5. Flow Launcher-ийн эх үр дүнд хүрэлгүй, доогуур эрэмбийн fallback үр дүн нэмнэ.
+
+Action keyword-тэй шууд асуулгуудыг үл тооно, тиймээс plugin зөвхөн энгийн глобал хайлтад оролцоно.
+
+<a id="notes"></a>
+### 📓 Тэмдэглэл
+
+* Fallback гаралт 20 үр дүн, эх plugin бүрт 6 үр дүнгээр хязгаарлагдана.
+* Зарим гуравдагч талын plugin шууд бус асуулгад өөрөөр ажиллаж болох тул fallback үр дүн эх сурвалжаас хамаарч болно.
+* Layout Fallback нь текст орчуулахгүй, транслитерац хийхгүй. Зөвхөн ижил физик товч даралтыг суусан бусад Windows гарын байрлалаар дахин тайлбарлана.
+
+<a id="supported-keyboard-layouts"></a>
+## 🌍 Дэмжигдэх гарын байрлалууд
+
+Layout Fallback нь ижил физик товч өөр тэмдэгт гаргадаг шууд гарын байрлалуудтай хамгийн сайн ажилладаг.
+
+Хамгийн сайн хувилбарууд: 🇺🇸 English US, 🇬🇧 English UK, 🇷🇺 Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai, 🇵🇱 Polish 214, 🇵🇱 Polish Typewriter.
+
+Латин суурьтай байрлалууд ч ажиллаж болно, гэхдээ олон тэмдэг англитай давхцдаг тул ашиг нь ихэвчлэн бага. Үүнд: 🇩🇪 German, 🇫🇷 French AZERTY, 🇪🇸 Spanish, 🇮🇹 Italian, 🇵🇹 Portuguese, 🇹🇷 Turkish Q, 🇨🇿 Czech QWERTY, 🇸🇰 Slovak QWERTY, 🇭🇺 Hungarian, 🇷🇴 Romanian, 🇱🇹 Lithuanian, 🇱🇻 Latvian, 🇪🇪 Estonian, 🇭🇷 Croatian, 🇸🇮 Slovenian, 🇦🇱 Albanian, 🇧🇦 Bosnian Latin, 🇷🇸 Serbian Latin, 🇳🇱 Dutch, 🇩🇰 Danish, 🇳🇴 Norwegian, 🇸🇪 Swedish, 🇫🇮 Finnish, 🇮🇸 Icelandic.
+
+Зарим байрлал IME, dead keys, төвөгтэй найруулга, AltGr-ийн их хэрэглээ эсвэл кандидат сонголт ашигладаг тул дэмжлэг хязгаарлагдаж болно. Үүнд: 🇨🇳 Chinese Simplified IME, 🇹🇼 Chinese Traditional IME, 🇯🇵 Japanese IME, 🇰🇷 Korean IME, 🇻🇳 Vietnamese Telex, 🇻🇳 Vietnamese VNI, 🇮🇳 Hindi Devanagari input, 🇧🇩 Bengali input, 🇮🇳 Tamil input, 🇮🇳 Telugu input, 🇮🇳 Kannada input, 🇮🇳 Malayalam input, 🇹🇭 Thai Kedmanee variants with complex composition, 🇺🇸 US International, 🇬🇧 United Kingdom Extended, 🇨🇦 Canadian Multilingual Standard, 🇨🇦 French Canadian, 🇪🇸 Spanish International, 🇵🇹 Portuguese ABNT, 🇧🇷 Portuguese ABNT2, 🇨🇿 Czech Programmers, 🇸🇰 Slovak Programmers, 🇭🇺 Hungarian 101-key, 🇵🇱 Polish Programmer.
+
+<a id="build"></a>
+## 🛠 Build хийх
+
+.NET 9 SDK шаардлагатай:
+
+```powershell
+winget install Microsoft.DotNet.SDK.9
+```
+
+Plugin-ийг build хийнэ:
+
+```powershell
+Set-ExecutionPolicy -Scope Process Bypass
+.\build.ps1
+```
+
+Суулгах ZIP дараах замд үүснэ:
+
+```text
+artifacts\LayoutFallback-0.1.4.zip
+```
+
+Үүссэн ZIP-ийг Flow Launcher-ийн plugin settings-ээр суулгаад Flow Launcher-ийг дахин асаана уу.
+
+### Түргэн local development
+
+Plugin-ийг build хийж, build-ийг Flow Launcher руу хуулдаг script ашиглаж болно. Ингэснээр гараар хийх шаардлагагүй.
+
+Flow Launcher-ийн plugin-уудын үндсэн хавтас:
+
+```powershell
+.\install-dev.ps1
+```
+
+Portable Flow Launcher эсвэл custom plugins хавтас:
+
+```powershell
+.\install-dev.ps1 -FlowPluginsDirectory "D:\Apps\FlowLauncher\UserData\Plugins"
+```
+
+Суулгасны дараа Flow Launcher-ийг дахин асаах хэрэгтэй.
+
+## 📄 Лиценз
+
+MIT — хувь нэмэр оруулахыг дэмжинэ.

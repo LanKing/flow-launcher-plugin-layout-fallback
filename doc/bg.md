@@ -1,0 +1,97 @@
+🇺🇦 [Українська](ua.md) | 🇷🇺 [Русский](ru.md) | 🇧🇾 [Беларуская](by.md) | 🇷🇸 [Српски](rs.md) | 🇲🇰 [Македонски](mk.md) | 🇰🇿 [Қазақша](kz.md) | 🇰🇬 [Кыргызча](kg.md) | 🇲🇳 [Монгол](mn.md) | 🇬🇷 [Ελληνικά](gr.md) | 🇮🇱 [עברית](il.md) | 🇸🇦 [العربية](sa.md) | 🇮🇷 [فارسی](ir.md) | 🇦🇲 [Հայերեն](am.md) | 🇬🇪 [ქართული](ge.md) | 🇹🇭 [ไทย](th.md)
+
+[![Flow Launcher](https://img.shields.io/badge/Flow%20Launcher-plugin-5c2d91?logo=windows&logoColor=white)](https://www.flowlauncher.com/)
+[![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+[![.NET 9](https://img.shields.io/badge/.NET-9.0-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+[![Latest release](https://img.shields.io/github/v/release/LanKing/flow-launcher-plugin-layout-fallback?label=release)](https://github.com/LanKing/flow-launcher-plugin-layout-fallback/releases)
+[![Downloads](https://img.shields.io/github/downloads/LanKing/flow-launcher-plugin-layout-fallback/total?label=downloads)](https://github.com/LanKing/flow-launcher-plugin-layout-fallback/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE)
+
+> Когато инсталирах Flow Launcher, наистина се изненадах, че не успях да намеря такъв плъгин. Това ме накара да се замисля колко човешко време е било изгубено в повторно писане, триене и поправяне на текст, въведен с грешна клавиатурна подредба.
+
+# ⌨️ Добавя fallback резултати за грешни клавиатурни подредби.
+
+![⌨️](/doc/demo.png)
+
+Примери:
+* `Kdij,fxur` -> допълнително търси `Настройки`
+* `хелло` -> допълнително търси `hello`
+
+Плъгинът проверява само клавиатурните подредби, инсталирани в Windows системата на потребителя.
+
+Оригиналните резултати на Flow Launcher остават непроменени и по-високо. Fallback резултатите се маркират с `⌨` и получават силно понижение на score.
+
+<a id="how-it-works"></a>
+## 🤓 Механика в детайли
+
+1. Чете инсталираните Windows клавиатурни подредби чрез `GetKeyboardLayoutList`, `HKCU\Keyboard Layout\Preload` и `HKCU\Keyboard Layout\Substitutes`.
+2. Изгражда карти за конвертиране между всяка подредена двойка налични подредби.
+3. Генерира коригирани кандидати за заявката и филтрира слаби или дублирани конверсии.
+4. Заявява другите глобални плъгини на Flow Launcher с коригираните кандидати.
+5. Добавя fallback резултати с по-нисък приоритет, без да променя оригиналните резултати на Flow Launcher.
+
+Явните заявки с action keyword се игнорират, така че плъгинът участва само в обикновено глобално търсене.
+
+<a id="notes"></a>
+### 📓 Бележки
+
+* Fallback изходът е ограничен до 20 резултата и 6 резултата на източников плъгин.
+* Някои външни плъгини може да се държат различно при непряко заявяване, така че fallback резултатите могат да зависят от източниковия плъгин.
+* Layout Fallback не превежда и не транслитерира текст. Той само преинтерпретира същите физически натискания на клавиши през други инсталирани Windows подредби.
+
+<a id="supported-keyboard-layouts"></a>
+## 🌍 Поддържани клавиатурни подредби
+
+Layout Fallback работи най-добре с директни клавиатурни подредби, при които едни и същи физически клавиши дават различни символи.
+
+Най-добрите кандидати включват 🇺🇸 English US, 🇬🇧 English UK, 🇷🇺 Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai.
+
+Латинизираните подредби също могат да работят, но ползата обикновено е по-малка, защото много символи съвпадат с английските. Това включва 🇩🇪 German, 🇫🇷 French AZERTY, 🇪🇸 Spanish, 🇮🇹 Italian, 🇵🇹 Portuguese, 🇹🇷 Turkish Q, 🇨🇿 Czech QWERTY, 🇸🇰 Slovak QWERTY, 🇭🇺 Hungarian, 🇷🇴 Romanian, 🇱🇹 Lithuanian, 🇱🇻 Latvian, 🇪🇪 Estonian, 🇭🇷 Croatian, 🇸🇮 Slovenian, 🇦🇱 Albanian, 🇧🇦 Bosnian Latin, 🇷🇸 Serbian Latin, 🇳🇱 Dutch, 🇩🇰 Danish, 🇳🇴 Norwegian, 🇸🇪 Swedish, 🇫🇮 Finnish, 🇮🇸 Icelandic, 🇵🇱 Polish Programmer, 🇵🇱 Polish 214, and 🇵🇱 Polish Typewriter.
+
+Някои подредби може да имат ограничена поддръжка, защото разчитат на IME, dead keys, сложна композиция, активен AltGr или избор на кандидати. Това включва 🇨🇳 Chinese Simplified IME, 🇹🇼 Chinese Traditional IME, 🇯🇵 Japanese IME, 🇰🇷 Korean IME, 🇻🇳 Vietnamese Telex, 🇻🇳 Vietnamese VNI, 🇮🇳 Hindi Devanagari input, 🇧🇩 Bengali input, 🇮🇳 Tamil input, 🇮🇳 Telugu input, 🇮🇳 Kannada input, 🇮🇳 Malayalam input, 🇹🇭 Thai Kedmanee variants with complex composition, 🇺🇸 US International, 🇬🇧 United Kingdom Extended, 🇨🇦 Canadian Multilingual Standard, 🇨🇦 French Canadian, 🇪🇸 Spanish International, 🇵🇹 Portuguese ABNT, 🇧🇷 Portuguese ABNT2, 🇨🇿 Czech Programmers, 🇸🇰 Slovak Programmers, 🇭🇺 Hungarian 101-key.
+
+<a id="build"></a>
+## 🛠 Сглобяване
+
+Изисква .NET 9 SDK:
+
+```powershell
+winget install Microsoft.DotNet.SDK.9
+```
+
+Сглобете плъгина:
+
+```powershell
+Set-ExecutionPolicy -Scope Process Bypass
+.\build.ps1
+```
+
+Инсталационният ZIP ще бъде създаден тук:
+
+```text
+artifacts\LayoutFallback-0.1.4.zip
+```
+
+Инсталирайте генерирания ZIP от настройките за плъгини на Flow Launcher, след което рестартирайте Flow Launcher.
+
+### Бърза локална разработка
+
+Можете да използвате скрипт, който сглобява плъгина и копира сборката във Flow Launcher, за да не го правите ръчно.
+
+За стандартната папка с плъгини на Flow Launcher:
+
+```powershell
+.\install-dev.ps1
+```
+
+За portable Flow Launcher или персонализирана папка с плъгини:
+
+```powershell
+.\install-dev.ps1 -FlowPluginsDirectory "D:\Apps\FlowLauncher\UserData\Plugins"
+```
+
+След инсталацията трябва да рестартирате Flow Launcher.
+
+## 📄 Лиценз
+
+MIT — приносите са добре дошли.

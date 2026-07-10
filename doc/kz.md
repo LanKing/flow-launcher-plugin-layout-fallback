@@ -1,0 +1,97 @@
+🇺🇦 [Українська](ua.md) | 🇷🇺 [Русский](ru.md) | 🇧🇾 [Беларуская](by.md) | 🇧🇬 [Български](bg.md) | 🇷🇸 [Српски](rs.md) | 🇲🇰 [Македонски](mk.md) | 🇰🇬 [Кыргызча](kg.md) | 🇲🇳 [Монгол](mn.md) | 🇬🇷 [Ελληνικά](gr.md) | 🇮🇱 [עברית](il.md) | 🇸🇦 [العربية](sa.md) | 🇮🇷 [فارسی](ir.md) | 🇦🇲 [Հայերեն](am.md) | 🇬🇪 [ქართული](ge.md) | 🇹🇭 [ไทย](th.md)
+
+[![Flow Launcher](https://img.shields.io/badge/Flow%20Launcher-plugin-5c2d91?logo=windows&logoColor=white)](https://www.flowlauncher.com/)
+[![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+[![.NET 9](https://img.shields.io/badge/.NET-9.0-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+[![Latest release](https://img.shields.io/github/v/release/LanKing/flow-launcher-plugin-layout-fallback?label=release)](https://github.com/LanKing/flow-launcher-plugin-layout-fallback/releases)
+[![Downloads](https://img.shields.io/github/downloads/LanKing/flow-launcher-plugin-layout-fallback/total?label=downloads)](https://github.com/LanKing/flow-launcher-plugin-layout-fallback/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE)
+
+> Flow Launcher орнатқан кезде, мұндай плагинді таба алмағаныма шынымен таңғалдым. Бұл қате пернетақта жаймасында терілген мәтінді қайта теруге, өшіруге және түзетуге қанша адам уақыты кеткенін ойландырды.
+
+# ⌨️ Қате пернетақта жаймалары үшін fallback нәтижелерін қосады.
+
+![⌨️](/doc/demo.png)
+
+Мысалдар:
+* `<fgnfekfh` -> қосымша іздейді `Баптаулар`
+* `руддщ` -> қосымша іздейді `hello`
+
+Плагин пайдаланушының Windows жүйесінде орнатылған пернетақта жаймаларын ғана тексереді.
+
+Flow Launcher-дің бастапқы нәтижелері өзгермейді және жоғарыда қалады. Fallback нәтижелері `⌨` белгісімен белгіленеді және score қатты төмендетіледі.
+
+<a id="how-it-works"></a>
+## 🤓 Механика егжей-тегжейлі
+
+1. Windows жүйесінде орнатылған пернетақта жаймаларын `GetKeyboardLayoutList`, `HKCU\Keyboard Layout\Preload` және `HKCU\Keyboard Layout\Substitutes` арқылы оқиды.
+2. Қолжетімді жаймалардың әрбір реттелген жұбы арасында түрлендіру карталарын құрады.
+3. Түзетілген сұрау кандидаттарын жасап, әлсіз немесе қайталанатын түрлендірулерді алып тастайды.
+4. Түзетілген кандидаттармен Flow Launcher-дің басқа глобалдық плагиндеріне сұрау жібереді.
+5. Flow Launcher-дің бастапқы нәтижелерін өзгертпей, төменірек басымдықтағы fallback нәтижелерін қосады.
+
+Action keyword бар айқын сұраулар еленбейді, сондықтан плагин тек кәдімгі глобалдық іздеуге қатысады.
+
+<a id="notes"></a>
+### 📓 Ескертпелер
+
+* Fallback шығысы 20 нәтижемен және әр бастапқы плагинге 6 нәтижемен шектеледі.
+* Кейбір үшінші тарап плагиндері жанама сұрауларда өзгеше әрекет етуі мүмкін, сондықтан fallback нәтижелері дереккөзге байланысты өзгеруі мүмкін.
+* Layout Fallback мәтінді аудармайды және транслитерацияламайды. Ол тек сол физикалық перне басуларын басқа орнатылған Windows жаймалары арқылы қайта түсіндіреді.
+
+<a id="supported-keyboard-layouts"></a>
+## 🌍 Қолдау көрсетілетін пернетақта жаймалары
+
+Layout Fallback бірдей физикалық пернелер әртүрлі таңба беретін тікелей пернетақта жаймаларымен жақсы жұмыс істейді.
+
+Ең жақсы кандидаттар: 🇺🇸 English US, 🇬🇧 English UK, 🇷🇺 Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai, 🇵🇱 Polish 214, 🇵🇱 Polish Typewriter.
+
+Латын негізіндегі жаймалар да жұмыс істеуі мүмкін, бірақ пайдасы әдетте аздау, себебі көптеген таңбалар ағылшын тілімен сәйкес келеді. Бұған кіреді: 🇩🇪 German, 🇫🇷 French AZERTY, 🇪🇸 Spanish, 🇮🇹 Italian, 🇵🇹 Portuguese, 🇹🇷 Turkish Q, 🇨🇿 Czech QWERTY, 🇸🇰 Slovak QWERTY, 🇭🇺 Hungarian, 🇷🇴 Romanian, 🇱🇹 Lithuanian, 🇱🇻 Latvian, 🇪🇪 Estonian, 🇭🇷 Croatian, 🇸🇮 Slovenian, 🇦🇱 Albanian, 🇧🇦 Bosnian Latin, 🇷🇸 Serbian Latin, 🇳🇱 Dutch, 🇩🇰 Danish, 🇳🇴 Norwegian, 🇸🇪 Swedish, 🇫🇮 Finnish, 🇮🇸 Icelandic.
+
+Кейбір жаймаларда қолдау шектеулі болуы мүмкін, себебі олар IME, dead keys, күрделі композиция, AltGr-ды көп қолдану немесе кандидат таңдауға сүйенеді. Бұған кіреді: 🇨🇳 Chinese Simplified IME, 🇹🇼 Chinese Traditional IME, 🇯🇵 Japanese IME, 🇰🇷 Korean IME, 🇻🇳 Vietnamese Telex, 🇻🇳 Vietnamese VNI, 🇮🇳 Hindi Devanagari input, 🇧🇩 Bengali input, 🇮🇳 Tamil input, 🇮🇳 Telugu input, 🇮🇳 Kannada input, 🇮🇳 Malayalam input, 🇹🇭 Thai Kedmanee variants with complex composition, 🇺🇸 US International, 🇬🇧 United Kingdom Extended, 🇨🇦 Canadian Multilingual Standard, 🇨🇦 French Canadian, 🇪🇸 Spanish International, 🇵🇹 Portuguese ABNT, 🇧🇷 Portuguese ABNT2, 🇨🇿 Czech Programmers, 🇸🇰 Slovak Programmers, 🇭🇺 Hungarian 101-key, 🇵🇱 Polish Programmer.
+
+<a id="build"></a>
+## 🛠 Құрастыру
+
+.NET 9 SDK қажет:
+
+```powershell
+winget install Microsoft.DotNet.SDK.9
+```
+
+Плагинді құрастырыңыз:
+
+```powershell
+Set-ExecutionPolicy -Scope Process Bypass
+.\build.ps1
+```
+
+Орнатылатын ZIP мына жерде жасалады:
+
+```text
+artifacts\LayoutFallback-0.1.4.zip
+```
+
+Жасалған ZIP файлын Flow Launcher плагин баптаулары арқылы орнатыңыз, содан кейін Flow Launcher-ді қайта іске қосыңыз.
+
+### Жылдам жергілікті әзірлеу
+
+Плагинді құрастырып, build нәтижесін Flow Launcher-ге көшіретін скриптті қолдануға болады, сондықтан мұны қолмен істеудің қажеті жоқ.
+
+Flow Launcher плагиндерінің әдепкі папкасы үшін:
+
+```powershell
+.\install-dev.ps1
+```
+
+Portable Flow Launcher немесе жеке плагиндер папкасы үшін:
+
+```powershell
+.\install-dev.ps1 -FlowPluginsDirectory "D:\Apps\FlowLauncher\UserData\Plugins"
+```
+
+Орнатудан кейін Flow Launcher-ді қайта іске қосу керек.
+
+## 📄 Лицензия
+
+MIT — үлестер құпталады.
