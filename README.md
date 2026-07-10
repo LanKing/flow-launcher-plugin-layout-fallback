@@ -1,4 +1,4 @@
-🇺🇦 [Українська](doc/ua.md) | 🇷🇺 [Русский](doc/ru.md) | 🇧🇾 [Беларуская](doc/by.md) | 🇧🇬 [Български](doc/bg.md) | 🇷🇸 [Српски](doc/rs.md) | 🇲🇰 [Македонски](doc/mk.md) | 🇰🇿 [Қазақша](doc/kz.md) | 🇰🇬 [Кыргызча](doc/kg.md) | 🇲🇳 [Монгол](doc/mn.md) | 🇬🇷 [Ελληνικά](doc/gr.md) | 🇮🇱 [עברית](doc/il.md) | 🇸🇦 [العربية](doc/sa.md) | 🇮🇷 [فارسی](doc/ir.md) | 🇦🇲 [Հայերեն](doc/am.md) | 🇬🇪 [ქართული](doc/ge.md) | 🇹🇭 [ไทย](doc/th.md)
+🇺🇦 [Українська](doc/ua.md) | <sub>ru</sub> [Русский](doc/ru.md) | 🇧🇾 [Беларуская](doc/by.md) | 🇧🇬 [Български](doc/bg.md) | 🇷🇸 [Српски](doc/rs.md) | 🇲🇰 [Македонски](doc/mk.md) | 🇰🇿 [Қазақша](doc/kz.md) | 🇰🇬 [Кыргызча](doc/kg.md) | 🇲🇳 [Монгол](doc/mn.md) | 🇬🇷 [Ελληνικά](doc/gr.md) | 🇮🇱 [עברית](doc/il.md) | 🇸🇦 [العربية](doc/sa.md) | 🇮🇷 [فارسی](doc/ir.md) | 🇦🇲 [Հայերեն](doc/am.md) | 🇬🇪 [ქართული](doc/ge.md) | 🇹🇭 [ไทย](doc/th.md)
 
 [![Flow Launcher](https://img.shields.io/badge/Flow%20Launcher-plugin-5c2d91?logo=windows&logoColor=white)](https://www.flowlauncher.com/)
 [![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows)
@@ -45,7 +45,7 @@ Explicit action-keyword queries are ignored, so the plugin only participates in 
 
 Layout Fallback works best with direct keyboard layouts where the same physical keys produce different characters.
 
-Best candidates include 🇺🇸 English US, 🇬🇧 English UK, 🇷🇺 Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai.
+Best candidates include 🇺🇸 English US, 🇬🇧 English UK, <sub>ru</sub> Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai.
 
 Latin-based layouts may also work, but the benefit is usually smaller because many characters overlap with English. This includes 🇩🇪 German, 🇫🇷 French AZERTY, 🇪🇸 Spanish, 🇮🇹 Italian, 🇵🇹 Portuguese, 🇹🇷 Turkish Q, 🇨🇿 Czech QWERTY, 🇸🇰 Slovak QWERTY, 🇭🇺 Hungarian, 🇷🇴 Romanian, 🇱🇹 Lithuanian, 🇱🇻 Latvian, 🇪🇪 Estonian, 🇭🇷 Croatian, 🇸🇮 Slovenian, 🇦🇱 Albanian, 🇧🇦 Bosnian Latin, 🇷🇸 Serbian Latin, 🇳🇱 Dutch, 🇩🇰 Danish, 🇳🇴 Norwegian, 🇸🇪 Swedish, 🇫🇮 Finnish, 🇮🇸 Icelandic, 🇵🇱 Polish Programmer, 🇵🇱 Polish 214, and 🇵🇱 Polish Typewriter.
 
