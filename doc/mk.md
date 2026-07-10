@@ -44,11 +44,29 @@
 
 Layout Fallback најдобро работи со директни распореди на тастатура, каде истите физички копчиња даваат различни знаци.
 
-Најдобри кандидати се 🇺🇸 English US, 🇬🇧 English UK, <sub>ru</sub> Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai, 🇵🇱 Polish 214, 🇵🇱 Polish Typewriter.
+Најдобри кандидати се 🇺🇸 English US, 🇬🇧 English UK, 🇷🇺 Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai, 🇵🇱 Polish 214, 🇵🇱 Polish Typewriter.
 
 Латинските распореди исто така може да работат, но користа обично е помала бидејќи многу знаци се поклопуваат со англискиот. Ова вклучува: 🇩🇪 German, 🇫🇷 French AZERTY, 🇪🇸 Spanish, 🇮🇹 Italian, 🇵🇹 Portuguese, 🇹🇷 Turkish Q, 🇨🇿 Czech QWERTY, 🇸🇰 Slovak QWERTY, 🇭🇺 Hungarian, 🇷🇴 Romanian, 🇱🇹 Lithuanian, 🇱🇻 Latvian, 🇪🇪 Estonian, 🇭🇷 Croatian, 🇸🇮 Slovenian, 🇦🇱 Albanian, 🇧🇦 Bosnian Latin, 🇷🇸 Serbian Latin, 🇳🇱 Dutch, 🇩🇰 Danish, 🇳🇴 Norwegian, 🇸🇪 Swedish, 🇫🇮 Finnish, 🇮🇸 Icelandic.
 
 Некои распореди може да имаат ограничена поддршка бидејќи користат IME, dead keys, сложена композиција, активен AltGr или избор на кандидати. Ова вклучува: 🇨🇳 Chinese Simplified IME, 🇹🇼 Chinese Traditional IME, 🇯🇵 Japanese IME, 🇰🇷 Korean IME, 🇻🇳 Vietnamese Telex, 🇻🇳 Vietnamese VNI, 🇮🇳 Hindi Devanagari input, 🇧🇩 Bengali input, 🇮🇳 Tamil input, 🇮🇳 Telugu input, 🇮🇳 Kannada input, 🇮🇳 Malayalam input, 🇹🇭 Thai Kedmanee variants with complex composition, 🇺🇸 US International, 🇬🇧 United Kingdom Extended, 🇨🇦 Canadian Multilingual Standard, 🇨🇦 French Canadian, 🇪🇸 Spanish International, 🇵🇹 Portuguese ABNT, 🇧🇷 Portuguese ABNT2, 🇨🇿 Czech Programmers, 🇸🇰 Slovak Programmers, 🇭🇺 Hungarian 101-key, 🇵🇱 Polish Programmer.
+
+<a id="installation"></a>
+
+## 📦 Инсталација
+
+Ако приклучокот е достапен во продавницата за приклучоци на Flow Launcher, инсталирајте го од поставките за приклучоци во Flow Launcher.
+
+<a id="manual-installation"></a>
+
+### Рачна инсталација
+
+Внесете го ова во Flow Launcher:
+
+```text
+pm install https://github.com/LanKing/flow-launcher-plugin-layout-fallback/releases/latest/download/LayoutFallback.zip
+```
+
+Потоа рестартирајте го Flow Launcher: внесете `Restart Flow Launcher` и изберете ја системската команда.
 
 <a id="build"></a>
 ## 🛠 Градење
@@ -69,7 +87,7 @@ Set-ExecutionPolicy -Scope Process Bypass
 ZIP-от за инсталација ќе биде создаден тука:
 
 ```text
-artifactsayoutfallback.zip
+artifacts\LayoutFallback-0.1.4.zip
 ```
 
 Инсталирајте го генерираниот ZIP преку поставките за приклучоци на Flow Launcher, потоа рестартирајте го Flow Launcher.

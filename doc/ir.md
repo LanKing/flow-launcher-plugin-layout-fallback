@@ -44,11 +44,29 @@
 
 Layout Fallback با چیدمان‌های مستقیم صفحه‌کلید بهتر کار می‌کند؛ جایی که همان کلیدهای فیزیکی نویسه‌های متفاوتی تولید می‌کنند.
 
-بهترین گزینه‌ها عبارت‌اند از 🇺🇸 English US, 🇬🇧 English UK, <sub>ru</sub> Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai, 🇵🇱 Polish 214, 🇵🇱 Polish Typewriter.
+بهترین گزینه‌ها عبارت‌اند از 🇺🇸 English US, 🇬🇧 English UK, 🇷🇺 Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai, 🇵🇱 Polish 214, 🇵🇱 Polish Typewriter.
 
 چیدمان‌های مبتنی بر لاتین هم می‌توانند کار کنند، اما سود آن معمولاً کمتر است، چون بسیاری از نویسه‌ها با انگلیسی هم‌پوشانی دارند. شامل: 🇩🇪 German, 🇫🇷 French AZERTY, 🇪🇸 Spanish, 🇮🇹 Italian, 🇵🇹 Portuguese, 🇹🇷 Turkish Q, 🇨🇿 Czech QWERTY, 🇸🇰 Slovak QWERTY, 🇭🇺 Hungarian, 🇷🇴 Romanian, 🇱🇹 Lithuanian, 🇱🇻 Latvian, 🇪🇪 Estonian, 🇭🇷 Croatian, 🇸🇮 Slovenian, 🇦🇱 Albanian, 🇧🇦 Bosnian Latin, 🇷🇸 Serbian Latin, 🇳🇱 Dutch, 🇩🇰 Danish, 🇳🇴 Norwegian, 🇸🇪 Swedish, 🇫🇮 Finnish, 🇮🇸 Icelandic.
 
 برخی چیدمان‌ها ممکن است پشتیبانی محدود داشته باشند، چون به IME، کلیدهای مرده، ترکیب پیچیده، استفاده زیاد از AltGr یا انتخاب کاندیدا وابسته‌اند. شامل: 🇨🇳 Chinese Simplified IME, 🇹🇼 Chinese Traditional IME, 🇯🇵 Japanese IME, 🇰🇷 Korean IME, 🇻🇳 Vietnamese Telex, 🇻🇳 Vietnamese VNI, 🇮🇳 Hindi Devanagari input, 🇧🇩 Bengali input, 🇮🇳 Tamil input, 🇮🇳 Telugu input, 🇮🇳 Kannada input, 🇮🇳 Malayalam input, 🇹🇭 Thai Kedmanee variants with complex composition, 🇺🇸 US International, 🇬🇧 United Kingdom Extended, 🇨🇦 Canadian Multilingual Standard, 🇨🇦 French Canadian, 🇪🇸 Spanish International, 🇵🇹 Portuguese ABNT, 🇧🇷 Portuguese ABNT2, 🇨🇿 Czech Programmers, 🇸🇰 Slovak Programmers, 🇭🇺 Hungarian 101-key, 🇵🇱 Polish Programmer.
+
+<a id="installation"></a>
+
+## 📦 نصب
+
+اگر افزونه در فروشگاه افزونه‌های Flow Launcher موجود است، آن را از تنظیمات افزونه‌های Flow Launcher نصب کنید.
+
+<a id="manual-installation"></a>
+
+### نصب دستی
+
+این را در Flow Launcher وارد کنید:
+
+```text
+pm install https://github.com/LanKing/flow-launcher-plugin-layout-fallback/releases/latest/download/LayoutFallback.zip
+```
+
+سپس Flow Launcher را با وارد کردن `Restart Flow Launcher` و انتخاب فرمان سیستمی دوباره راه‌اندازی کنید.
 
 <a id="build"></a>
 ## 🛠 ساخت
@@ -69,7 +87,7 @@ Set-ExecutionPolicy -Scope Process Bypass
 فایل ZIP قابل نصب در این مسیر ساخته می‌شود:
 
 ```text
-artifactsayoutfallback.zip
+artifacts\LayoutFallback-0.1.4.zip
 ```
 
 فایل ZIP ساخته‌شده را از تنظیمات پلاگین‌های Flow Launcher نصب کنید، سپس Flow Launcher را دوباره اجرا کنید.

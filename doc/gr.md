@@ -44,11 +44,29 @@
 
 Το Layout Fallback λειτουργεί καλύτερα με άμεσες διατάξεις πληκτρολογίου, όπου τα ίδια φυσικά πλήκτρα παράγουν διαφορετικούς χαρακτήρες.
 
-Οι καλύτεροι υποψήφιοι είναι 🇺🇸 English US, 🇬🇧 English UK, <sub>ru</sub> Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai, 🇵🇱 Polish 214, 🇵🇱 Polish Typewriter.
+Οι καλύτεροι υποψήφιοι είναι 🇺🇸 English US, 🇬🇧 English UK, 🇷🇺 Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai, 🇵🇱 Polish 214, 🇵🇱 Polish Typewriter.
 
 Οι λατινικές διατάξεις μπορούν επίσης να λειτουργήσουν, αλλά το όφελος είναι συνήθως μικρότερο, επειδή πολλοί χαρακτήρες συμπίπτουν με τα αγγλικά. Αυτό περιλαμβάνει: 🇩🇪 German, 🇫🇷 French AZERTY, 🇪🇸 Spanish, 🇮🇹 Italian, 🇵🇹 Portuguese, 🇹🇷 Turkish Q, 🇨🇿 Czech QWERTY, 🇸🇰 Slovak QWERTY, 🇭🇺 Hungarian, 🇷🇴 Romanian, 🇱🇹 Lithuanian, 🇱🇻 Latvian, 🇪🇪 Estonian, 🇭🇷 Croatian, 🇸🇮 Slovenian, 🇦🇱 Albanian, 🇧🇦 Bosnian Latin, 🇷🇸 Serbian Latin, 🇳🇱 Dutch, 🇩🇰 Danish, 🇳🇴 Norwegian, 🇸🇪 Swedish, 🇫🇮 Finnish, 🇮🇸 Icelandic.
 
 Ορισμένες διατάξεις μπορεί να έχουν περιορισμένη υποστήριξη, επειδή βασίζονται σε IME, νεκρά πλήκτρα, σύνθετη σύνθεση, έντονη χρήση AltGr ή επιλογή υποψηφίων. Αυτό περιλαμβάνει: 🇨🇳 Chinese Simplified IME, 🇹🇼 Chinese Traditional IME, 🇯🇵 Japanese IME, 🇰🇷 Korean IME, 🇻🇳 Vietnamese Telex, 🇻🇳 Vietnamese VNI, 🇮🇳 Hindi Devanagari input, 🇧🇩 Bengali input, 🇮🇳 Tamil input, 🇮🇳 Telugu input, 🇮🇳 Kannada input, 🇮🇳 Malayalam input, 🇹🇭 Thai Kedmanee variants with complex composition, 🇺🇸 US International, 🇬🇧 United Kingdom Extended, 🇨🇦 Canadian Multilingual Standard, 🇨🇦 French Canadian, 🇪🇸 Spanish International, 🇵🇹 Portuguese ABNT, 🇧🇷 Portuguese ABNT2, 🇨🇿 Czech Programmers, 🇸🇰 Slovak Programmers, 🇭🇺 Hungarian 101-key, 🇵🇱 Polish Programmer.
+
+<a id="installation"></a>
+
+## 📦 Εγκατάσταση
+
+Αν το plugin είναι διαθέσιμο στο Flow Launcher plugin store, εγκαταστήστε το από τις ρυθμίσεις plugins του Flow Launcher.
+
+<a id="manual-installation"></a>
+
+### Χειροκίνητη εγκατάσταση
+
+Πληκτρολογήστε αυτό στο Flow Launcher:
+
+```text
+pm install https://github.com/LanKing/flow-launcher-plugin-layout-fallback/releases/latest/download/LayoutFallback.zip
+```
+
+Στη συνέχεια επανεκκινήστε το Flow Launcher πληκτρολογώντας `Restart Flow Launcher` και επιλέγοντας την εντολή συστήματος.
 
 <a id="build"></a>
 ## 🛠 Δημιουργία
@@ -69,7 +87,7 @@ Set-ExecutionPolicy -Scope Process Bypass
 Το εγκαταστάσιμο ZIP θα δημιουργηθεί εδώ:
 
 ```text
-artifactsayoutfallback.zip
+artifacts\LayoutFallback-0.1.4.zip
 ```
 
 Εγκαταστήστε το παραγόμενο ZIP από τις ρυθμίσεις plugin του Flow Launcher και μετά επανεκκινήστε το Flow Launcher.

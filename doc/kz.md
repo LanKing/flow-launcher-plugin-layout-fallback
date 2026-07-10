@@ -44,11 +44,29 @@ Action keyword бар айқын сұраулар еленбейді, сонды
 
 Layout Fallback бірдей физикалық пернелер әртүрлі таңба беретін тікелей пернетақта жаймаларымен жақсы жұмыс істейді.
 
-Ең жақсы кандидаттар: 🇺🇸 English US, 🇬🇧 English UK, <sub>ru</sub> Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai, 🇵🇱 Polish 214, 🇵🇱 Polish Typewriter.
+Ең жақсы кандидаттар: 🇺🇸 English US, 🇬🇧 English UK, 🇷🇺 Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai, 🇵🇱 Polish 214, 🇵🇱 Polish Typewriter.
 
 Латын негізіндегі жаймалар да жұмыс істеуі мүмкін, бірақ пайдасы әдетте аздау, себебі көптеген таңбалар ағылшын тілімен сәйкес келеді. Бұған кіреді: 🇩🇪 German, 🇫🇷 French AZERTY, 🇪🇸 Spanish, 🇮🇹 Italian, 🇵🇹 Portuguese, 🇹🇷 Turkish Q, 🇨🇿 Czech QWERTY, 🇸🇰 Slovak QWERTY, 🇭🇺 Hungarian, 🇷🇴 Romanian, 🇱🇹 Lithuanian, 🇱🇻 Latvian, 🇪🇪 Estonian, 🇭🇷 Croatian, 🇸🇮 Slovenian, 🇦🇱 Albanian, 🇧🇦 Bosnian Latin, 🇷🇸 Serbian Latin, 🇳🇱 Dutch, 🇩🇰 Danish, 🇳🇴 Norwegian, 🇸🇪 Swedish, 🇫🇮 Finnish, 🇮🇸 Icelandic.
 
 Кейбір жаймаларда қолдау шектеулі болуы мүмкін, себебі олар IME, dead keys, күрделі композиция, AltGr-ды көп қолдану немесе кандидат таңдауға сүйенеді. Бұған кіреді: 🇨🇳 Chinese Simplified IME, 🇹🇼 Chinese Traditional IME, 🇯🇵 Japanese IME, 🇰🇷 Korean IME, 🇻🇳 Vietnamese Telex, 🇻🇳 Vietnamese VNI, 🇮🇳 Hindi Devanagari input, 🇧🇩 Bengali input, 🇮🇳 Tamil input, 🇮🇳 Telugu input, 🇮🇳 Kannada input, 🇮🇳 Malayalam input, 🇹🇭 Thai Kedmanee variants with complex composition, 🇺🇸 US International, 🇬🇧 United Kingdom Extended, 🇨🇦 Canadian Multilingual Standard, 🇨🇦 French Canadian, 🇪🇸 Spanish International, 🇵🇹 Portuguese ABNT, 🇧🇷 Portuguese ABNT2, 🇨🇿 Czech Programmers, 🇸🇰 Slovak Programmers, 🇭🇺 Hungarian 101-key, 🇵🇱 Polish Programmer.
+
+<a id="installation"></a>
+
+## 📦 Орнату
+
+Егер плагин Flow Launcher плагиндер дүкенінде қолжетімді болса, оны Flow Launcher плагин баптауларынан орнатыңыз.
+
+<a id="manual-installation"></a>
+
+### Қолмен орнату
+
+Мұны Flow Launcher ішінде енгізіңіз:
+
+```text
+pm install https://github.com/LanKing/flow-launcher-plugin-layout-fallback/releases/latest/download/LayoutFallback.zip
+```
+
+Содан кейін Flow Launcher-ді қайта іске қосыңыз: `Restart Flow Launcher` деп енгізіп, жүйелік команданы таңдаңыз.
 
 <a id="build"></a>
 ## 🛠 Құрастыру
@@ -69,7 +87,7 @@ Set-ExecutionPolicy -Scope Process Bypass
 Орнатылатын ZIP мына жерде жасалады:
 
 ```text
-artifactsayoutfallback.zip
+artifacts\LayoutFallback-0.1.4.zip
 ```
 
 Жасалған ZIP файлын Flow Launcher плагин баптаулары арқылы орнатыңыз, содан кейін Flow Launcher-ді қайта іске қосыңыз.

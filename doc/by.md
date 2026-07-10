@@ -44,11 +44,29 @@
 
 Layout Fallback лепш за ўсё працуе з прамымі раскладкамі, дзе адны і тыя ж фізічныя клавішы даюць розныя сімвалы.
 
-Найлепшыя кандыдаты ўключаюць 🇺🇸 English US, 🇬🇧 English UK, <sub>ru</sub> Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai.
+Найлепшыя кандыдаты ўключаюць 🇺🇸 English US, 🇬🇧 English UK, 🇷🇺 Russian, 🇺🇦 Ukrainian, 🇧🇾 Belarusian, 🇧🇬 Bulgarian, 🇷🇸 Serbian Cyrillic, 🇲🇰 Macedonian, 🇰🇿 Kazakh, 🇰🇬 Kyrgyz, 🇲🇳 Mongolian Cyrillic, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇸🇦 Arabic, 🇮🇷 Persian, 🇦🇲 Armenian, 🇬🇪 Georgian, 🇹🇭 Thai.
 
 Лацінскія раскладкі таксама могуць працаваць, але карысць звычайна меншая, бо шмат сімвалаў супадае з англійскімі. Сюды ўваходзяць 🇩🇪 German, 🇫🇷 French AZERTY, 🇪🇸 Spanish, 🇮🇹 Italian, 🇵🇹 Portuguese, 🇹🇷 Turkish Q, 🇨🇿 Czech QWERTY, 🇸🇰 Slovak QWERTY, 🇭🇺 Hungarian, 🇷🇴 Romanian, 🇱🇹 Lithuanian, 🇱🇻 Latvian, 🇪🇪 Estonian, 🇭🇷 Croatian, 🇸🇮 Slovenian, 🇦🇱 Albanian, 🇧🇦 Bosnian Latin, 🇷🇸 Serbian Latin, 🇳🇱 Dutch, 🇩🇰 Danish, 🇳🇴 Norwegian, 🇸🇪 Swedish, 🇫🇮 Finnish, 🇮🇸 Icelandic, 🇵🇱 Polish Programmer, 🇵🇱 Polish 214, and 🇵🇱 Polish Typewriter.
 
 Некаторыя раскладкі могуць мець абмежаваную падтрымку, бо выкарыстоўваюць IME, dead keys, складаную кампазіцыю, AltGr або выбар кандыдатаў. Сюды ўваходзяць 🇨🇳 Chinese Simplified IME, 🇹🇼 Chinese Traditional IME, 🇯🇵 Japanese IME, 🇰🇷 Korean IME, 🇻🇳 Vietnamese Telex, 🇻🇳 Vietnamese VNI, 🇮🇳 Hindi Devanagari input, 🇧🇩 Bengali input, 🇮🇳 Tamil input, 🇮🇳 Telugu input, 🇮🇳 Kannada input, 🇮🇳 Malayalam input, 🇹🇭 Thai Kedmanee variants with complex composition, 🇺🇸 US International, 🇬🇧 United Kingdom Extended, 🇨🇦 Canadian Multilingual Standard, 🇨🇦 French Canadian, 🇪🇸 Spanish International, 🇵🇹 Portuguese ABNT, 🇧🇷 Portuguese ABNT2, 🇨🇿 Czech Programmers, 🇸🇰 Slovak Programmers, 🇭🇺 Hungarian 101-key.
+
+<a id="installation"></a>
+
+## 📦 Усталяванне
+
+Калі плагін даступны ў краме плагінаў Flow Launcher, усталюйце яго праз налады плагінаў Flow Launcher.
+
+<a id="manual-installation"></a>
+
+### Ручное ўсталяванне
+
+Увядзіце гэта ў Flow Launcher:
+
+```text
+pm install https://github.com/LanKing/flow-launcher-plugin-layout-fallback/releases/latest/download/LayoutFallback.zip
+```
+
+Пасля гэтага перазапусціце Flow Launcher: увядзіце `Restart Flow Launcher` і выберыце сістэмную каманду.
 
 <a id="build"></a>
 ## 🛠 Зборка
@@ -69,7 +87,7 @@ Set-ExecutionPolicy -Scope Process Bypass
 ZIP для ўсталявання будзе створаны тут:
 
 ```text
-artifactsayoutfallback.zip
+artifacts\LayoutFallback-0.1.4.zip
 ```
 
 Усталюйце згенераваны ZIP праз налады плагінаў Flow Launcher, потым перазапусціце Flow Launcher.
